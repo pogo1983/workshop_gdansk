@@ -69,8 +69,8 @@ namespace CSharp_Basics
              */
             int add = X + Y;
             int subtract =X-Y;
-              int   multiply =X*Y ;
-              double divide = (double) Y/X;
+            int multiply =X*Y ;
+            double divide = (double) Y/X;
 
             Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
             Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
@@ -92,16 +92,16 @@ namespace CSharp_Basics
         //        /// Take moment to play with it.
         //        /// you can do same with other math operations.
         //        /// </summary>
-        //        [Test]
-        //        public void Int_Increments()
-        //        {
-        //            int example = 5;
-        //            example += 10;
-        //            //example is 15
-        //            example++;
-        //            //example is 16 know;
-        //            Assert.AreEqual(example, 16);
-        //        }
+        [Test]
+        public void Int_Increments()
+        {
+            int example = 5;
+            example += 10;
+            //example is 15
+            example++;
+            //example is 16 know;
+            Assert.AreEqual(example, 16);
+        }
 
         //        /// <summary>
         //        /// bool is the most straightforward and most useful it can only accept true and false.
@@ -110,28 +110,32 @@ namespace CSharp_Basics
         //        /// Assign to them true and false.
         //        /// Try to assign number 6 to them.
         //        /// </summary>
-        //        public void Bool()
-        //        {
+        [Test]
+        public void Bool()
+        {
+            bool truth = true;
+            bool notTruth = false;
+            int a = 6;
 
-        //            Assert.True(truth);
-        //            Assert.True(notTruth);
-        //        }
+            Assert.True(truth);
+            Assert.True(notTruth);
+        }
 
-        //            /// <summary>
-        //            /// There are many ways to store real numbers
-        //            /// Float, Double and Decimal.
-        //            /// Decimal is most accurate but most expensive that why is is usual used for financial data.
-        //            /// Float, Double are faster but not always accurate. Ask your teacher for more details.
-        //            /// repeat operations add, subtract, divide, and multiply for double
-        //            /// </summary>
-        //            public void float_double_decimal()
-        //            {
-        //                decimal exampleDecimal = new decimal(10.5);
-        //
-        //                double X = 140000000000000000000000000.001;
-        //                double Y = 0.0000000000000000000000000008;
-        //
-        //            }
+        /// <summary>
+        /// There are many ways to store real numbers
+        /// Float, Double and Decimal.
+        /// Decimal is most accurate but most expensive that why is is usual used for financial data.
+        /// Float, Double are faster but not always accurate. Ask your teacher for more details.
+        /// repeat operations add, subtract, divide, and multiply for double
+        /// </summary>
+        public void float_double_decimal()
+        {
+            decimal exampleDecimal = new decimal(10.5);
+
+            double X = 140000000000000000000000000.001;
+            double Y = 0.0000000000000000000000000008;
+
+        }
 
         //        /// <summary>
         //        /// Extra exercise
