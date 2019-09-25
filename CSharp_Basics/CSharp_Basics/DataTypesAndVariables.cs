@@ -57,26 +57,26 @@ namespace CSharp_Basics
         //        /// discuss why divide is not working
         //        /// </summary>
         //        [Test]
-        //        public void Operation_On_Integers()
-        //        {
-        //            int X = 4;
-        //            int Y = 5;
-        //
-        //            /*
-        //             * There are few other ways you can do this
-        //             * int add = 0;
-        //             * add = x+y;
-        //             */
-        //            int add = X + Y;
-        //
-        //            Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
-        //            Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
-        //            Assert.That(subtract, Is.TypeOf<int>(), "You sure it is int?");
-        //            Assert.AreEqual(20, multiply, "Example Has wrong value did you changed it?");
-        //            Assert.That(multiply, Is.TypeOf<int>(), "You sure it is int?");
-        //            Assert.AreEqual(1.25, divide, "Example Has wrong value did you changed it?");
-        //            Assert.That(divide, Is.TypeOf<int>(), "You sure it is int?");
-        //        }
+        public void Operation_On_Integers()
+        {
+            int X = 4;
+            int Y = 5;
+
+            /*
+             * There are few other ways you can do this
+             * int add = 0;
+             * add = x+y;
+             */
+            int add = X + Y;
+
+            Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
+            Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
+            Assert.That(subtract, Is.TypeOf<int>(), "You sure it is int?");
+            Assert.AreEqual(20, multiply, "Example Has wrong value did you changed it?");
+            Assert.That(multiply, Is.TypeOf<int>(), "You sure it is int?");
+            Assert.AreEqual(1.25, divide, "Example Has wrong value did you changed it?");
+            Assert.That(divide, Is.TypeOf<int>(), "You sure it is int?");
+        }
 
         //        /// <summary>
         //        /// There are more way of changing value if you want to only increase x you can
