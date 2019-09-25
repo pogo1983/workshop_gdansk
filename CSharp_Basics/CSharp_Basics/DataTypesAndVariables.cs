@@ -101,6 +101,8 @@ namespace CSharp_Basics
             example++;
             //example is 16 know;
             Assert.AreEqual(example, 16);
+            Assert.AreEqual(example++, 16, "example++");
+            Assert.AreEqual(++example, 16, "++example");
         }
 
         //        /// <summary>
@@ -110,16 +112,16 @@ namespace CSharp_Basics
         //        /// Assign to them true and false.
         //        /// Try to assign number 6 to them.
         //        /// </summary>
-        [Test]
-        public void Bool()
-        {
-            bool truth = true;
-            bool notTruth = false;
-            int a = 6;
+        //[Test]
+        //public void Bool()
+        //{
+        //    bool truth = true;
+        //    bool notTruth = false;
+        //    int a = 6;
 
-            Assert.True(truth);
-            Assert.True(notTruth);
-        }
+        //    Assert.True(truth);
+        //    Assert.True(notTruth);
+        //}
 
         /// <summary>
         /// There are many ways to store real numbers
@@ -128,13 +130,29 @@ namespace CSharp_Basics
         /// Float, Double are faster but not always accurate. Ask your teacher for more details.
         /// repeat operations add, subtract, divide, and multiply for double
         /// </summary>
+        /// 
+        [Test]
         public void float_double_decimal()
         {
             decimal exampleDecimal = new decimal(10.5);
 
             double X = 140000000000000000000000000.001;
             double Y = 0.0000000000000000000000000008;
+            double add = X + Y;
+            double subtract = X - Y;
+            double multiply = X * Y;
+            double divide = Y / X;
 
+            decimal z = (decimal)X + (decimal)Y;
+
+            Assert.AreEqual(140000000000000000000000000m, z, "bo to jest ZZZ");
+            Assert.AreEqual(1.4E+26d, add, "Example Has wrong value did you changed it?");
+            Assert.AreEqual(1.4E+26d, subtract, "Wrong value maybe other way around?");
+            Assert.That(subtract, Is.TypeOf<double>(), "You sure it is int?");
+            Assert.AreEqual(0.112d, multiply, "Example Has wrong value did you changed it?");
+            Assert.That(multiply, Is.TypeOf<double>(), "You sure it is int?");
+            Assert.AreEqual(5.7142857142857143E-54d, divide, "Example Has wrong value did you changed it?");
+            Assert.That(divide, Is.TypeOf<double>(), "You sure it is int?");
         }
 
         //        /// <summary>
