@@ -86,6 +86,8 @@ namespace CSharp_Basics
 
            string result= theString.Substring(16,5);
             Assert.AreEqual(result, "thing");
+            string result2 = theString.Replace("h", "POGO");
+            Console.WriteLine(result2);
         }
     }
 }
