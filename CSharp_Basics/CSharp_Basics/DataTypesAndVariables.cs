@@ -68,6 +68,9 @@ namespace CSharp_Basics
              * add = x+y;
              */
             int add = X + Y;
+            int subtract =X-Y;
+              int   multiply =X*Y ;
+              int  divide = X/Y;
 
             Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
             Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
