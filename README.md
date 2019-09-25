@@ -2,4 +2,4 @@
 Hello Gdansk!
 
 
-Zmiana jakas
+Zmiana jakas lul
