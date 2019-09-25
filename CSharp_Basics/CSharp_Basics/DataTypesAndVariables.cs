@@ -161,10 +161,12 @@ namespace CSharp_Basics
         //        /// Display them - you can do it Console.WriteLine(yourVariable);
         //        /// Try to explain what happened.
         //        /// </summary>
-        //        public void Default_Values()
-        //        {
-        //           
-        //        }
+        public void Default_Values()
+        {
+            int i;
+            var x = 5.0m;
+            char a = 'a';
+        }
 
         //Additonal read:
         // There are more types we didn't cover but it is worth knowing about
