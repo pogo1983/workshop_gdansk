@@ -56,7 +56,7 @@ namespace CSharp_Basics
         //        /// make integer variables: subtract, multiply and divide perform operations.
         //        /// discuss why divide is not working
         //        /// </summary>
-        //        [Test]
+        [Test]
         public void Operation_On_Integers()
         {
             int X = 4;
@@ -70,7 +70,7 @@ namespace CSharp_Basics
             int add = X + Y;
             int subtract =X-Y;
               int   multiply =X*Y ;
-              int  divide = X/Y;
+              double divide = (double) Y/X;
 
             Assert.AreEqual(9, add, "Example Has wrong value did you changed it?");
             Assert.AreEqual(-1, subtract, "Wrong value maybe other way around?");
@@ -78,7 +78,7 @@ namespace CSharp_Basics
             Assert.AreEqual(20, multiply, "Example Has wrong value did you changed it?");
             Assert.That(multiply, Is.TypeOf<int>(), "You sure it is int?");
             Assert.AreEqual(1.25, divide, "Example Has wrong value did you changed it?");
-            Assert.That(divide, Is.TypeOf<int>(), "You sure it is int?");
+            Assert.That(divide, Is.TypeOf<double>(), "You sure it is int?");
         }
 
         //        /// <summary>
