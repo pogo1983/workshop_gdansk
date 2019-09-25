@@ -59,28 +59,32 @@ namespace CSharp_Basics
         //        /// https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.7.1#Starting
         //        /// create string with both x and y insed
         //        /// </summary>
-        //        [Test]
-        //        public void String_Format()
-        //        {
-        //            int x = 500;
-        //            int y = 453;
-        //            string result;
-        //
-        //            StringAssert.Contains(result, x.ToString());
-        //            StringAssert.Contains(result, y.ToString());
-        //        }
+        [Test]
+        public void String_Format()
+        {
+            int x = 500;
+            int y = 453;
+            string result = String.Format("to jest jakis tam tekst x={0}, y={1}",x,y);
+            string result2 = $"to jest jakis tam tekst x={x} , y={y}";
+            StringAssert.Contains(x.ToString(),result);
+            StringAssert.Contains(y.ToString(),result);
+            StringAssert.Contains(x.ToString(), result2);
+            StringAssert.Contains(y.ToString(), result2);
+            Console.WriteLine(result);
+            Console.WriteLine(result2);
+        }
 
         //        /// <summary>
         //        /// From theString return word "thing".
         //        /// hint use Substring() method
         //        /// </summary>
-        //        [Test]
-        //        public void Substrings()
-        //        {
-        //            var theString =
-        //                "The interesting thing about London is that there are always stylish surprises around every corner.";
-        //
-        //            Assert.AreEqual(result,"thing");
-        //        }
+        [Test]
+        public void Substrings()
+        {
+            var theString =
+                "The interesting thing about London is that there are always stylish surprises around every corner.";
+
+            Assert.AreEqual(result, "thing");
+        }
     }
 }
