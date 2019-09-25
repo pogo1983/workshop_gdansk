@@ -3,20 +3,13 @@ Hello Gdansk!
 
 
 dfgdf gd
+Zmiana jakas
+Zmiana jakas lul
 POGO Pdf gdfgdfgfd g
-d 
-gdf 
-gdf
- gdf
- d
- gfd 
-df 
-gdf
- gdf
- gdf
- gdf
- gd
-f gd
+dgdfgdf gdf
+ d gfd df gdf gdf
+ gdf gdf
+ gdf gd
 f gd
 f g
 df g
