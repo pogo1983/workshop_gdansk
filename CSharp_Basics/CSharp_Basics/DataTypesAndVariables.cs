@@ -37,14 +37,17 @@ namespace CSharp_Basics
             // 0 - the value
             //  ; - IMPORTANT ';' sign means and of the command usually it is on end of the line - remember about it
             int example = 0;
+            int singleDigit = 6;
+            int number = 14;
+            int lessThanZero = -100;
 
-            //Assert.AreEqual(example, 0, "Example Has wrong value did you changed it?");
-            //Assert.AreEqual(singleDigit, 6, "Example Has wrong value did you changed it?");
-            //Assert.That(singleDigit, Is.TypeOf<int>(), "You sure it is int?");
-            //Assert.AreEqual(number, 14, "Example Has wrong value did you changed it?");
-            //Assert.That(singleDigit, Is.TypeOf<int>(), "You sure it is int?");
-            //Assert.AreEqual(lessThanZero, -100, "Example Has wrong value did you changed it?");
-            //Assert.That(singleDigit, Is.TypeOf<int>(), "You sure it is int?");
+            Assert.AreEqual(example, 0, "Example Has wrong value did you changed it?");
+            Assert.AreEqual(singleDigit, 6, "Example Has wrong value did you changed it?");
+            Assert.That(singleDigit, Is.TypeOf<int>(), "You sure it is int?");
+            Assert.AreEqual(number, 14, "Example Has wrong value did you changed it?");
+            Assert.That(singleDigit, Is.TypeOf<int>(), "You sure it is int?");
+            Assert.AreEqual(lessThanZero, -100, "Example Has wrong value did you changed it?");
+            Assert.That(singleDigit, Is.TypeOf<int>(), "You sure it is int?");
         }
 
         //        /// <summary>
