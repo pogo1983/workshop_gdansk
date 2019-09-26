@@ -26,24 +26,25 @@ namespace Calculator
             string operation = Console.ReadLine();
 
             double sum=0;
+////switch
+//            switch (operation)
+//            {
+//                case "+":sum = Add(a, b);
+//                    break;
+//                case "-":sum = Sub(a, b);
+//                    break;
+//                    case "x":
+//                case "*":
+//                    sum = Multilpy(a, b);
+//                    break;
+//                case "/":
+//                    sum = Division(a, b);
+//                    break;
+//                default: Console.WriteLine("nie znaleziono");
+//                    break;
+//            }
 
-            switch (operation)
-            {
-                case "+":sum = Add(a, b);
-                    break;
-                case "-":sum = Sub(a, b);
-                    break;
-                case "*":
-                    sum = Multilpy(a, b);
-                    break;
-                case "/":
-                    sum = Division(a, b);
-                    break;
-                default: Console.WriteLine("nie znaleziono");
-                    break;
-            }
-
-
+//else if
             if (operation == "-")
             {
                 sum = Sub(a, b);
@@ -56,10 +57,11 @@ namespace Calculator
             {
                 sum = Multilpy(a, b);
             }
-            else if (operation == "/")
+            else if (operation == "/" && a!=0 && b!=0)
             {
                 sum = Division(a, b);
             }
+
             else 
             {
                 Console.WriteLine("Error nie znalazlem dzialania");
