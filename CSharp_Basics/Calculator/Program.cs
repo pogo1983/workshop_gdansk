@@ -15,14 +15,44 @@ namespace Calculator
 
             Console.WriteLine("Podaj pierewsza liczbe ");
             int a = int.Parse(Console.ReadLine());
+
             Console.WriteLine("Podaj druga liczbe ");
             int b = int.Parse(Console.ReadLine());
-            int sum = Add(a,b);
-            int sum1 = Sub(a, b);
-            int sum2 = Multilpy(a, b);
-            double sum3 = Division(a, b);
+            //int sum = Add(a,b);
+            //int sum1 = Sub(a, b);
+            //int sum2 = Multilpy(a, b);
+            //double sum3 = Division(a, b);
+            Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
+            string operation = Console.ReadLine();
 
-            Console.WriteLine("Suma to " + sum + " Odejmowanie to " + sum1 + " Monzenie to " + sum2 + " Dzielenie to " + sum3);
+            double sum=0;
+
+            if (operation == "-")
+            {
+                sum = Sub(a, b);
+            }
+            else if (operation == "+")
+            {
+                sum = Add(a, b);
+            }
+            else if (operation == "*")
+            {
+                sum = Multilpy(a, b);
+            }
+            else if (operation == "/")
+            {
+                sum = Division(a, b);
+            }
+            else 
+            {
+                Console.WriteLine("Error nie znalazlem dzialania");
+            }
+
+            Console.WriteLine("wynik to ");
+            Console.WriteLine(sum);
+
+            //Console.WriteLine("Suma to " + sum + " Odejmowanie to " + sum1 + " Monzenie to " + sum2 + " Dzielenie to " + sum3);
+            // Console.WriteLine($"Suma to "{ sum } ");
             Console.ReadLine();
             Console.ReadKey();//roznica miedzy line, ze kazdy przycisk zamknie
 
