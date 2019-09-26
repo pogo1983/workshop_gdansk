@@ -42,7 +42,7 @@ namespace Calculator
                     return;
 
                 }
-                double sum = DoMath(a, b, operation);//moze byc tez var sum =
+                double sum = Calculations.DoMath(a, b, operation);//moze byc tez var sum =
                 Console.WriteLine(sum);
             }
             Console.ReadKey();
@@ -108,45 +108,45 @@ namespace Calculator
 
         }
 
-        public static double DoMath (int a, int b, string operation)
-        {
-            
-            
+        //public static double DoMath (int a, int b, string operation)
+        //{
 
-            double sum = 0;
-            ////switch
-            switch (operation)
-            {
-                case "+":
-                    sum = Add(a, b);
-                    break;
-                case "-":
-                    sum = Sub(a, b);
-                    break;
-                case "x":
-                case "*":
-                    sum = Multilpy(a, b);
-                    break;
-                case "/":
-                    sum = Division(a, b);
-                    break;
-                default:
-                    Console.WriteLine("nie znaleziono");
-                    break;
-            }
-            return sum;
-        }
+
+
+        //    double sum = 0;
+        //    ////switch
+        //    switch (operation)
+        //    {
+        //        case "+":
+        //            sum = Add(a, b);
+        //            break;
+        //        case "-":
+        //            sum = Sub(a, b);
+        //            break;
+        //        case "x":
+        //        case "*":
+        //            sum = Multilpy(a, b);
+        //            break;
+        //        case "/":
+        //            sum = Division(a, b);
+        //            break;
+        //        default:
+        //            Console.WriteLine("nie znaleziono");
+        //            break;
+        //    }
+        //    return sum;
+        //}
 
         public static int GetValueFromUser(string message)
         {
-        
+
             int a = 0;
             bool isProper = false;
             while (!isProper)
             {
                 Console.WriteLine(message);
                 string x = Console.ReadLine();
-                if (x=="q")
+                if (x == "q")
                 {
                     quit = true;
                     return 0;
@@ -165,29 +165,29 @@ namespace Calculator
             //return a;
         }
 
-        public static int Add(int a , int b)
-        {
-            int sum = a + b;
-            return sum;
-        }
+        //public static int Add(int a , int b)
+        //{
+        //    int sum = a + b;
+        //    return sum;
+        //}
 
-        public static int Sub(int a, int b)
-        {
-            int sum = a - b;
-            return sum;
-        }
+        //public static int Sub(int a, int b)
+        //{
+        //    int sum = a - b;
+        //    return sum;
+        //}
 
-        public static int Multilpy(int a, int b)
-        {
-            int sum = a * b;
-            return sum;
-        }
+        //public static int Multilpy(int a, int b)
+        //{
+        //    int sum = a * b;
+        //    return sum;
+        //}
 
-        public static double Division(double a, double b)
-        {
-            double sum = a / b;
-            return sum;
-        }
+        //public static double Division(double a, double b)
+        //{
+        //    double sum = a / b;
+        //    return sum;
+        //}
 
     }
 }
