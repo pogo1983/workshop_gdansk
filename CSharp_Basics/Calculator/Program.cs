@@ -9,7 +9,7 @@ namespace Calculator
     class Program
     {
 
-        static bool quit = false;
+        //static bool quit = false;
         static void Main(string[] args)
         {
 
@@ -17,32 +17,33 @@ namespace Calculator
 
             // int a = int.Parse(Console.ReadLine());
             bool isRunning = true;
-            while (!quit)
+            while (!Interface.quit)
             {
-                int a = GetValueFromUser("Podaj Pierwsza liczbe");
-                if (quit) 
+                int a = Interface.GetValueFromUser("Podaj Pierwsza liczbe");
+                if (Interface.quit) 
                 {
                     Console.WriteLine("Zamykam aplikacje");
                     Console.ReadKey();
                     return;
                 }
-                int b = GetValueFromUser("Podaj Druga liczbe");
-                if (quit)
+                int b = Interface.GetValueFromUser("Podaj Druga liczbe");
+                if (Interface.quit)
                 {
                     Console.WriteLine("Zamykam aplikacje");
                     Console.ReadKey();
                     return;
                 }
-                Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
-                string operation = Console.ReadLine();
-                if (operation == "q")
-                {
-                    Console.WriteLine("zamykam aplikacje");
-                    Console.ReadKey();
-                    return;
+                string operations = Interface.GetOperations();
+                //Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
+                //string operation = Console.ReadLine();
+                //if (operation == "q")
+                //{
+                //    Console.WriteLine("zamykam aplikacje");
+                //    Console.ReadKey();
+                //    return;
 
-                }
-                double sum = Calculations.DoMath(a, b, operation);//moze byc tez var sum =
+                //}
+                var sum = Calculations.DoMath(a, b, operations);//moze byc tez var sum =
                 Console.WriteLine(sum);
             }
             Console.ReadKey();
@@ -137,33 +138,33 @@ namespace Calculator
         //    return sum;
         //}
 
-        public static int GetValueFromUser(string message)
-        {
+        //public static int GetValueFromUser(string message)
+        //{
 
-            int a = 0;
-            bool isProper = false;
-            while (!isProper)
-            {
-                Console.WriteLine(message);
-                string x = Console.ReadLine();
-                if (x == "q")
-                {
-                    quit = true;
-                    return 0;
-                }
-                isProper = int.TryParse(x, out a);
-                if (!isProper)
-                {
-                    message = $"Wartosc {x} spoza wartosci";
-                }
-            }
-            return a;
-            //if (!int.TryParse(x, out a))
-            //{
-            //    Console.WriteLine($"nie znana liczba {a}");
-            //}
-            //return a;
-        }
+        //    int a = 0;
+        //    bool isProper = false;
+        //    while (!isProper)
+        //    {
+        //        Console.WriteLine(message);
+        //        string x = Console.ReadLine();
+        //        if (x == "q")
+        //        {
+        //            quit = true;
+        //            return 0;
+        //        }
+        //        isProper = int.TryParse(x, out a);
+        //        if (!isProper)
+        //        {
+        //            message = $"Wartosc {x} spoza wartosci";
+        //        }
+        //    }
+        //    return a;
+        //    //if (!int.TryParse(x, out a))
+        //    //{
+        //    //    Console.WriteLine($"nie znana liczba {a}");
+        //    //}
+        //    //return a;
+        //}
 
         //public static int Add(int a , int b)
         //{
