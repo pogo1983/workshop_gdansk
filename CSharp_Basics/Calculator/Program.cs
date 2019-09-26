@@ -15,14 +15,19 @@ namespace Calculator
 
             Console.WriteLine("Podaj pierewsza liczbe ");
             // int a = int.Parse(Console.ReadLine());
-            string a = Console.ReadLine();
-            int parsedA = 0;
-            if (!int.TryParse(a, out parsedA))
+            string x = Console.ReadLine();
+            int a = 0;
+            if (!int.TryParse(x, out a))
             {
                 Console.WriteLine($"nie znana liczba {a}");
             }
             Console.WriteLine("Podaj druga liczbe ");
-            int b = int.Parse(Console.ReadLine());
+            string y = Console.ReadLine();
+            int b = 0;
+            if (!int.TryParse(y, out b))
+            {
+                Console.WriteLine($"nie znana liczba {b}");
+            }
             //int sum = Add(a,b);
             //int sum1 = Sub(a, b);
             //int sum2 = Multilpy(a, b);
@@ -62,7 +67,7 @@ namespace Calculator
             {
                 sum = Multilpy(a, b);
             }
-            else if (operation == "/" && a!=0 && b!=0)
+            else if (operation == "/" )
             {
                 sum = Division(a, b);
             }
