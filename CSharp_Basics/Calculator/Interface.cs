@@ -9,6 +9,15 @@ namespace Calculator
     public static class Interface
     {
         public static bool quit = false;
+        public static MathData GetAllValuesFromCustomer()
+        {
+            int first = GetValueFromUser("Podaj Pierwsza");
+            int second = GetValueFromUser("Podaj druga");
+            string operation = GetOperations ();
+            return new MathData(first, second, operation);
+
+        }
+
         public static int GetValueFromUser(string message)
         {
 

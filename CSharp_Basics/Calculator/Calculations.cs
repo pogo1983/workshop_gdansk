@@ -8,27 +8,36 @@ namespace Calculator
 {
     public static class Calculations
     {
-        public static double DoMath(int a, int b, string operation)
+        public static double DoMath(MathData mathData)
         {
+        //    return DoMath(mathData.FirstNumber,mathData.SecondNumber,mathData.Operation);
+        //}
+        //public static double DoMath(int a, int b, string operation)
+        //{
 
 
 
             double sum = 0;
             ////switch
-            switch (operation)
+            switch (mathData.Operation)
             {
                 case "+":
-                    sum = Add(a, b);
+                    sum = Add(mathData.FirstNumber,mathData.SecondNumber);
                     break;
                 case "-":
-                    sum = Sub(a, b);
+                    sum = Sub(mathData.FirstNumber, mathData.SecondNumber);
                     break;
                 case "x":
                 case "*":
-                    sum = Multilpy(a, b);
+                    sum = Multilpy(mathData.FirstNumber, mathData.SecondNumber);
                     break;
                 case "/":
-                    sum = Division(a, b);
+                    if (mathData.SecondNumber == 0)
+                    {
+                        Console.WriteLine("nie dzielimy przez 0");
+                        break;
+                    }
+                    sum = Division(mathData.FirstNumber, mathData.SecondNumber);
                     break;
                 default:
                     Console.WriteLine("nie znaleziono");

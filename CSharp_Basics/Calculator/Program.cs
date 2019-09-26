@@ -19,21 +19,24 @@ namespace Calculator
             bool isRunning = true;
             while (!Interface.quit)
             {
-                int a = Interface.GetValueFromUser("Podaj Pierwsza liczbe");
-                if (Interface.quit) 
-                {
-                    Console.WriteLine("Zamykam aplikacje");
-                    Console.ReadKey();
-                    return;
-                }
-                int b = Interface.GetValueFromUser("Podaj Druga liczbe");
-                if (Interface.quit)
-                {
-                    Console.WriteLine("Zamykam aplikacje");
-                    Console.ReadKey();
-                    return;
-                }
-                string operations = Interface.GetOperations();
+                MathData mathData = Interface.GetAllValuesFromCustomer();
+            
+
+            //int a = Interface.GetValueFromUser("Podaj Pierwsza liczbe");
+            //    if (Interface.quit) 
+            //    {
+            //        Console.WriteLine("Zamykam aplikacje");
+            //        Console.ReadKey();
+            //        return;
+            //    }
+            //    int b = Interface.GetValueFromUser("Podaj Druga liczbe");
+            //    if (Interface.quit)
+            //    {
+            //        Console.WriteLine("Zamykam aplikacje");
+            //        Console.ReadKey();
+            //        return;
+            //    }
+            //    string operations = Interface.GetOperations();
                 //Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
                 //string operation = Console.ReadLine();
                 //if (operation == "q")
@@ -43,7 +46,7 @@ namespace Calculator
                 //    return;
 
                 //}
-                var sum = Calculations.DoMath(a, b, operations);//moze byc tez var sum =
+                var sum = Calculations.DoMath(mathData);//moze byc tez var sum =
                 Console.WriteLine(sum);
             }
             Console.ReadKey();
