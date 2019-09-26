@@ -27,6 +27,23 @@ namespace Calculator
 
             double sum=0;
 
+            switch (operation)
+            {
+                case "+":sum = Add(a, b);
+                    break;
+                case "-":sum = Sub(a, b);
+                    break;
+                case "*":
+                    sum = Multilpy(a, b);
+                    break;
+                case "/":
+                    sum = Division(a, b);
+                    break;
+                default: Console.WriteLine("nie znaleziono");
+                    break;
+            }
+
+
             if (operation == "-")
             {
                 sum = Sub(a, b);
