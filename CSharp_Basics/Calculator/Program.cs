@@ -8,18 +8,31 @@ namespace Calculator
 {
     class Program
     {
+
+        static bool quit = false;
         static void Main(string[] args)
         {
 
 
 
-
             // int a = int.Parse(Console.ReadLine());
             bool isRunning = true;
-            while (isRunning)
+            while (!quit)
             {
                 int a = GetValueFromUser("Podaj Pierwsza liczbe");
+                if (quit) 
+                {
+                    Console.WriteLine("Zamykam aplikacje");
+                    Console.ReadKey();
+                    return;
+                }
                 int b = GetValueFromUser("Podaj Druga liczbe");
+                if (quit)
+                {
+                    Console.WriteLine("Zamykam aplikacje");
+                    Console.ReadKey();
+                    return;
+                }
                 Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
                 string operation = Console.ReadLine();
                 if (operation == "q")
@@ -133,6 +146,11 @@ namespace Calculator
             {
                 Console.WriteLine(message);
                 string x = Console.ReadLine();
+                if (x=="q")
+                {
+                    quit = true;
+                    return 0;
+                }
                 isProper = int.TryParse(x, out a);
                 if (!isProper)
                 {
