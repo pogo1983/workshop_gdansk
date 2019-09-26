@@ -1,14 +1,19 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using System;
+using Calculator;
+
 
 namespace CalculatorTests
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethod1()
+        [Test]
+        public void AddingOperation()
         {
+            MathData mathData = new MathData(5,4,"/");
+            var result = Calculations.DoMath(mathData);
+            Assert.AreEqual(9, result);
         }
     }
 }
