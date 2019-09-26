@@ -14,8 +14,13 @@ namespace Calculator
 
 
             Console.WriteLine("Podaj pierewsza liczbe ");
-            int a = int.Parse(Console.ReadLine());
-
+            // int a = int.Parse(Console.ReadLine());
+            string a = Console.ReadLine();
+            int parsedA = 0;
+            if (!int.TryParse(a, out parsedA))
+            {
+                Console.WriteLine($"nie znana liczba {a}");
+            }
             Console.WriteLine("Podaj druga liczbe ");
             int b = int.Parse(Console.ReadLine());
             //int sum = Add(a,b);
