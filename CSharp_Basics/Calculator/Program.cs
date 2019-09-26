@@ -13,21 +13,12 @@ namespace Calculator
 
 
 
-            Console.WriteLine("Podaj pierewsza liczbe ");
+
             // int a = int.Parse(Console.ReadLine());
-            string x = Console.ReadLine();
-            int a = 0;
-            if (!int.TryParse(x, out a))
-            {
-                Console.WriteLine($"nie znana liczba {a}");
-            }
-            Console.WriteLine("Podaj druga liczbe ");
-            string y = Console.ReadLine();
-            int b = 0;
-            if (!int.TryParse(y, out b))
-            {
-                Console.WriteLine($"nie znana liczba {b}");
-            }
+            int a = GetValueFromUser("Podaj Pierwsza liczbe");
+            int b = GetValueFromUser("Podaj Druga liczbe");
+
+
             //int sum = Add(a,b);
             //int sum1 = Sub(a, b);
             //int sum2 = Multilpy(a, b);
@@ -87,6 +78,17 @@ namespace Calculator
 
         }
 
+        public static int GetValueFromUser(string message)
+        {
+            Console.WriteLine(message);
+            string x = Console.ReadLine();
+            int a = 0;
+            if (!int.TryParse(x, out a))
+            {
+                Console.WriteLine($"nie znana liczba {a}");
+            }
+            return a;
+        }
 
         public static int Add(int a , int b)
         {
