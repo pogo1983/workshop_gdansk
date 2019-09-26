@@ -15,12 +15,24 @@ namespace Calculator
 
 
             // int a = int.Parse(Console.ReadLine());
-            int a = GetValueFromUser("Podaj Pierwsza liczbe");
-            int b = GetValueFromUser("Podaj Druga liczbe");
-            Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
-            string operation = Console.ReadLine();
-            var sum = DoMath(a, b, operation);
-            Console.WriteLine(sum);
+            bool isRunning = true;
+            while (isRunning)
+            {
+                int a = GetValueFromUser("Podaj Pierwsza liczbe");
+                int b = GetValueFromUser("Podaj Druga liczbe");
+                Console.WriteLine("Podaj rodzaj dzialania czyli : + albo - albo * albo / ");
+                string operation = Console.ReadLine();
+                if (operation == "q")
+                {
+                    Console.WriteLine("zamykam aplikacje");
+                    Console.ReadKey();
+                    return;
+
+                }
+                double sum = DoMath(a, b, operation);//moze byc tez var sum =
+                Console.WriteLine(sum);
+            }
+            Console.ReadKey();
             //int sum = Add(a,b);
             //int sum1 = Sub(a, b);
             //int sum2 = Multilpy(a, b);
@@ -114,14 +126,25 @@ namespace Calculator
 
         public static int GetValueFromUser(string message)
         {
-            Console.WriteLine(message);
-            string x = Console.ReadLine();
+        
             int a = 0;
-            if (!int.TryParse(x, out a))
+            bool isProper = false;
+            while (!isProper)
             {
-                Console.WriteLine($"nie znana liczba {a}");
+                Console.WriteLine(message);
+                string x = Console.ReadLine();
+                isProper = int.TryParse(x, out a);
+                if (!isProper)
+                {
+                    message = $"Wartosc {x} spoza wartosci";
+                }
             }
             return a;
+            //if (!int.TryParse(x, out a))
+            //{
+            //    Console.WriteLine($"nie znana liczba {a}");
+            //}
+            //return a;
         }
 
         public static int Add(int a , int b)
