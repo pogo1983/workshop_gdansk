@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="CategoriesTest.cs" />
     <Compile Include="ContactUsTest.cs" />
+    <Compile Include="Pages\ContactUsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
   </ItemGroup>

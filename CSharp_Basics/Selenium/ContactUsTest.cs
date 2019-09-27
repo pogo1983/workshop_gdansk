@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Selenium.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,28 @@ namespace Selenium
     [TestFixture]
     public class ContactUsTest:TestBase
     {
+
+        ContactUsPage sut;
+
+        [SetUp]
+        public void ContactUsSetup()
+        {
+            sut = new ContactUsPage(driver);
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+        }
+
         [Test]
         public void SendFormWithoutData()
 
         {
-            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+           
             var categoryHeader = driver.FindElement(By.CssSelector("#contact-link > a:nth-child(1)"));
             categoryHeader.Click();
             var contactSend = driver.FindElement(By.CssSelector("#submitMessage"));
             contactSend.Click();
 
             WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
-            var checkError = waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert")));
+            var checkError = waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert")));//oczekuje na przycisk
 
             //var checkError = driver.FindElement(By.CssSelector(".alert"));
             string text = checkError.Text;
