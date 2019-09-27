@@ -20,8 +20,6 @@ namespace Selenium
             driver = new ChromeDriver();
             var waitTime = new System.TimeSpan(0, 0, 7);
             driver.Manage().Timeouts().ImplicitWait = waitTime;
-
-
         }
 
         [TearDown]

@@ -28,6 +28,7 @@ namespace Selenium.Pages
         public void CountItemsOnPage()
         {
             //var webElements = driver.FindElements(By.CssSelector("div.product-container"));
+            //return countItems.Count.ToString();
             //var actualElementCount = webElements.Count.ToString();//tostring - zrzucenie lcizby do stringa
 
             int count = 0;

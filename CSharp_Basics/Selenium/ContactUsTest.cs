@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using Selenium.Pages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +55,12 @@ namespace Selenium
             //Assert.AreEqual(2,1);// error zatrzymuje aplikacje
             // driver.Quit();//close zamknie okno a quit drivera
         }
+
+       
+        //public void StremWriterExample()
+        //{
+        //    using sw = new StreamWriter(@"C:\workspace\git\workshop_gdansk\pogo.txt)
+        //}
 
     }
 }
