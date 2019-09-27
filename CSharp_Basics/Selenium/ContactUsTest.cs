@@ -24,8 +24,8 @@ namespace Selenium
             var checkError = driver.FindElement(By.CssSelector(".alert"));
             string text = checkError.Text;
 
-            StringAssert.Contains("Invalid email address.", text);
-
+            //StringAssert.Contains("Invalid email address.", text);
+            Assert.That(checkError.Text, Is.EqualTo("Invalid email address."));//tego sie uzywa bo wygodniejsze
 
             //driver = new ChromeDriver;
             //var driver = new ChromeDriver();//tworzenie obiektu drivera, konstruktor
