@@ -7,18 +7,18 @@ using System.Threading;
 namespace Selenium
 {
     [TestFixture]
-    public class UnitTest1
+    public class CategoriesTest:TestBase
     {
-        IWebDriver driver;
+       //IWebDriver driver;
 
 
-        [SetUp]
-        public void Setup()
-        {
-            driver = new ChromeDriver();
-            var waitTime = new System.TimeSpan(0,0,7);
-            driver.Manage().Timeouts().ImplicitWait = waitTime;
-        }
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    driver = new ChromeDriver();
+        //    var waitTime = new System.TimeSpan(0,0,7);
+        //    driver.Manage().Timeouts().ImplicitWait = waitTime;
+        //}
 
         [Test]
         public void DressTest()
@@ -100,10 +100,10 @@ namespace Selenium
             // driver.Quit();//close zamknie okno a quit drivera
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-           driver.Quit();
-        }
+        //[TearDown]
+        //public void TearDown()
+        //{
+        //   driver.Quit();
+        //}
     }
 }
