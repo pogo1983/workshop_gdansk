@@ -36,13 +36,15 @@ namespace Selenium
             // contactSend.Click(); //zamienoine na sut.ClickSubmitButton();
             sut.ClickSubmitButton();
 
-            WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
-            var checkError = waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert")));//oczekuje na przycisk
+            //WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
+            //var checkError = waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert")));//oczekuje na przycisk
 
             //var checkError = driver.FindElement(By.CssSelector(".alert"));
-            string text = checkError.Text;
+            // string text = checkError.Text;//zamienione na var errorMessage = sut.GetErrorMessage();
+            var errorMessage = sut.GetErrorMessage();
 
-            StringAssert.Contains("Invalid email address.", text);
+
+            StringAssert.Contains("Invalid email address.", errorMessage);
            // Assert.That(checkError.Text, Is.EqualTo("Invalid email address."));//tego sie uzywa bo wygodniejsze
 
             //driver = new ChromeDriver;

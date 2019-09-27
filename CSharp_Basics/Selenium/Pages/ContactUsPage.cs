@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Selenium.Pages
     {
         private IWebDriver driver;
         private By submitButtonLocator = By.CssSelector("#submitMessage");
+        private By errorMessageLocator = By.CssSelector(".alert");
+
         public ContactUsPage(IWebDriver driver)//konstruktor do tworzenia obiektu strony
         {
             this.driver = driver;
@@ -24,6 +27,15 @@ namespace Selenium.Pages
         public void ClickSubmitButton()
         {
             driver.FindElement(submitButtonLocator).Click();
+        }
+
+
+        public string GetErrorMessage()
+        {
+            WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
+            var checkError = waitDriver.Until(ExpectedConditions.ElementExists(errorMessageLocator));//oczekuje na przycisk
+            return checkError.Text;
+
         }
     }
 
