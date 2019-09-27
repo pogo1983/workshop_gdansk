@@ -20,18 +20,21 @@ namespace Selenium
         public void ContactUsSetup()
         {
             sut = new ContactUsPage(driver);
-            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            //driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            sut.GoToPage();
         }
 
         [Test]
         public void SendFormWithoutData()
 
         {
-           
-            var categoryHeader = driver.FindElement(By.CssSelector("#contact-link > a:nth-child(1)"));
-            categoryHeader.Click();
-            var contactSend = driver.FindElement(By.CssSelector("#submitMessage"));
-            contactSend.Click();
+
+            //var categoryHeader = driver.FindElement(By.CssSelector("#contact-link > a:nth-child(1)"));
+            // categoryHeader.Click();//to byl przypadelk, gdy otwieralem glowna strone a potem contact us
+
+            // var contactSend = driver.FindElement(By.CssSelector("#submitMessage"));
+            // contactSend.Click(); //zamienoine na sut.ClickSubmitButton();
+            sut.ClickSubmitButton();
 
             WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
             var checkError = waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert")));//oczekuje na przycisk
