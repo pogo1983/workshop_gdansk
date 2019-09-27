@@ -87,6 +87,7 @@ namespace Selenium
 
             var productCounter = driver.FindElement(By.CssSelector(".heading-counter"));
             string text = productCounter.Text;
+
             var webElements = driver.FindElements(By.CssSelector("div.product-container"));
             var actualElementCount = webElements.Count.ToString();//tostring - zrzucenie lcizby do stringa
 
@@ -98,6 +99,16 @@ namespace Selenium
             //var driver = new ChromeDriver();//tworzenie obiektu drivera, konstruktor
             //Assert.AreEqual(2,1);// error zatrzymuje aplikacje
             // driver.Quit();//close zamknie okno a quit drivera
+
+
+
+
+
+
+
+
+
+
         }
 
         //[TearDown]
