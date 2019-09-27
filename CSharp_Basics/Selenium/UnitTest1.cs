@@ -16,7 +16,7 @@ namespace Selenium
         public void Setup()
         {
             driver = new ChromeDriver();
-            var waitTime = new System.TimeSpan(0,0,1);
+            var waitTime = new System.TimeSpan(0,0,7);
             driver.Manage().Timeouts().ImplicitWait = waitTime;
         }
 
@@ -57,9 +57,15 @@ namespace Selenium
 
             var productCounter = driver.FindElement(By.CssSelector(".heading-counter"));
             string text = productCounter.Text;
+            var webElements = driver.FindElements(By.CssSelector("div.product-container"));
+            var actualElementCount = webElements.Count.ToString();//tostring - zrzucenie lcizby do stringa
 
             // text.Contains("5");mozna tak sprawdzic czy tekst zawiera jakis tekst ale lepij uzyc ponizszego StringAssert
-            StringAssert.Contains("1", text);
+            //StringAssert.Contains("7", text); proste prawdzenia czy ilosc zgadza sie z tym co podalismy
+            StringAssert.Contains(actualElementCount, text);
+
+            // text.Contains("5");mozna tak sprawdzic czy tekst zawiera jakis tekst ale lepij uzyc ponizszego StringAssert
+           // StringAssert.Contains("1", text);
 
 
             //driver = new ChromeDriver;
@@ -75,16 +81,18 @@ namespace Selenium
             driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
             //title="Dresses"
 
-            var categoryHeader = driver.FindElement(By.CssSelector("ul.sf-menu > li > a[title='Woman']"));
+            var categoryHeader = driver.FindElement(By.CssSelector("ul.sf-menu > li > a[title='Women']"));
             categoryHeader.Click();
             //Thread.Sleep(1000); czekanie ale nie ladne
 
             var productCounter = driver.FindElement(By.CssSelector(".heading-counter"));
             string text = productCounter.Text;
+            var webElements = driver.FindElements(By.CssSelector("div.product-container"));
+            var actualElementCount = webElements.Count.ToString();//tostring - zrzucenie lcizby do stringa
 
             // text.Contains("5");mozna tak sprawdzic czy tekst zawiera jakis tekst ale lepij uzyc ponizszego StringAssert
-            StringAssert.Contains("7", text);
-
+            //StringAssert.Contains("7", text); proste prawdzenia czy ilosc zgadza sie z tym co podalismy
+            StringAssert.Contains(actualElementCount, text);
 
             //driver = new ChromeDriver;
             //var driver = new ChromeDriver();//tworzenie obiektu drivera, konstruktor
