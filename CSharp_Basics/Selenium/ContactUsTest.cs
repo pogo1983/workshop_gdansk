@@ -41,10 +41,12 @@ namespace Selenium
 
             //var checkError = driver.FindElement(By.CssSelector(".alert"));
             // string text = checkError.Text;//zamienione na var errorMessage = sut.GetErrorMessage();
-            var errorMessage = sut.GetErrorMessage();
+            var errorMessage = sut.GetErrorMessageText();
 
 
-            StringAssert.Contains("Invalid email address.", errorMessage);
+            //StringAssert.Contains("Invalid email address.", errorMessage);
+            Assert.IsTrue(sut.IsErrorMessageDisplayed(), errorMessage);
+
            // Assert.That(checkError.Text, Is.EqualTo("Invalid email address."));//tego sie uzywa bo wygodniejsze
 
             //driver = new ChromeDriver;
