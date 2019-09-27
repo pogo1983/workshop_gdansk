@@ -21,14 +21,16 @@ namespace Selenium
         }
 
         [Test]
-        public void FirstTest()
+        public void DressTest()
             
         {
             driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
             //title="Dresses"
+            
             var categoryHeader = driver.FindElement(By.CssSelector("ul.sf-menu > li > a[title='Dresses']"));
             categoryHeader.Click();
             //Thread.Sleep(1000); czekanie ale nie ladne
+
             var productCounter = driver.FindElement(By.CssSelector(".heading-counter"));
             string text = productCounter.Text;
 
@@ -41,6 +43,55 @@ namespace Selenium
             //Assert.AreEqual(2,1);// error zatrzymuje aplikacje
             // driver.Quit();//close zamknie okno a quit drivera
         }
+
+        [Test]
+        public void ShirtTest()
+
+        {
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            //title="Dresses"
+
+            var categoryHeader = driver.FindElement(By.CssSelector("ul.sf-menu > li > a[title='T-shirts']"));
+            categoryHeader.Click();
+            //Thread.Sleep(1000); czekanie ale nie ladne
+
+            var productCounter = driver.FindElement(By.CssSelector(".heading-counter"));
+            string text = productCounter.Text;
+
+            // text.Contains("5");mozna tak sprawdzic czy tekst zawiera jakis tekst ale lepij uzyc ponizszego StringAssert
+            StringAssert.Contains("1", text);
+
+
+            //driver = new ChromeDriver;
+            //var driver = new ChromeDriver();//tworzenie obiektu drivera, konstruktor
+            //Assert.AreEqual(2,1);// error zatrzymuje aplikacje
+            // driver.Quit();//close zamknie okno a quit drivera
+        }
+
+        [Test]
+        public void WomanTest()
+
+        {
+            driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            //title="Dresses"
+
+            var categoryHeader = driver.FindElement(By.CssSelector("ul.sf-menu > li > a[title='Woman']"));
+            categoryHeader.Click();
+            //Thread.Sleep(1000); czekanie ale nie ladne
+
+            var productCounter = driver.FindElement(By.CssSelector(".heading-counter"));
+            string text = productCounter.Text;
+
+            // text.Contains("5");mozna tak sprawdzic czy tekst zawiera jakis tekst ale lepij uzyc ponizszego StringAssert
+            StringAssert.Contains("7", text);
+
+
+            //driver = new ChromeDriver;
+            //var driver = new ChromeDriver();//tworzenie obiektu drivera, konstruktor
+            //Assert.AreEqual(2,1);// error zatrzymuje aplikacje
+            // driver.Quit();//close zamknie okno a quit drivera
+        }
+
         [TearDown]
         public void TearDown()
         {
