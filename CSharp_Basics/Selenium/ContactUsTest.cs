@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,14 @@ namespace Selenium
             var contactSend = driver.FindElement(By.CssSelector("#submitMessage"));
             contactSend.Click();
 
-            var checkError = driver.FindElement(By.CssSelector(".alert"));
+            WebDriverWait waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
+            var checkError = waitDriver.Until(ExpectedConditions.ElementExists(By.CssSelector(".alert")));
+
+            //var checkError = driver.FindElement(By.CssSelector(".alert"));
             string text = checkError.Text;
 
-            //StringAssert.Contains("Invalid email address.", text);
-            Assert.That(checkError.Text, Is.EqualTo("Invalid email address."));//tego sie uzywa bo wygodniejsze
+            StringAssert.Contains("Invalid email address.", text);
+           // Assert.That(checkError.Text, Is.EqualTo("Invalid email address."));//tego sie uzywa bo wygodniejsze
 
             //driver = new ChromeDriver;
             //var driver = new ChromeDriver();//tworzenie obiektu drivera, konstruktor
