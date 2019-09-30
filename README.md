@@ -1,4 +1,4 @@
 # workshop_gdansk
 Hello Gdansk!
 
-C# + selenium
+C# + selenium kurs
