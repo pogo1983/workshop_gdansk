@@ -24,16 +24,19 @@ namespace Selenium
         public void DressTest1()
             
         {
-            sut.CountItemsOnPage();
-            var errorMessage = sut.actualElementCount();
-            StringAssert.Contains(actualElementCount, text);
+         
         }
 
         [Test]
         public void ShirtTest2()
 
         {
-           
+            sut.GoToPage();
+            var categoryHeader = driver.FindElement(By.CssSelector("ul.sf-menu > li > a[title='T-shirts']"));
+            categoryHeader.Click();
+            string textWitCountedItems = sut.GetDispNumberOfProducts();
+            string countOfItems = sut.CountItemsOnPage();
+            StringAssert.Contains(textWitCountedItems,countOfItems);
         }
 
         [Test]
