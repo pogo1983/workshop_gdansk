@@ -13,6 +13,7 @@ namespace Selenium.Pages
         private IWebDriver driver;
         private WebDriverWait waitDriver;
         private By ItemCounter = By.CssSelector("div.product-container");
+        private By ItemCounterLocator = By.CssSelector(".heading-counter");
 
         public CategoryPage(IWebDriver driver)//konstruktor do tworzenia obiektu strony
         {
@@ -25,26 +26,32 @@ namespace Selenium.Pages
             driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
         }
 
-        public void CountItemsOnPage()
+        public string GetDispNumberOfProducts()
         {
-            //var webElements = driver.FindElements(By.CssSelector("div.product-container"));
-            //return countItems.Count.ToString();
-            //var actualElementCount = webElements.Count.ToString();//tostring - zrzucenie lcizby do stringa
+            var productcounter = driver.FindElement(ItemCounterLocator);
+            return productcounter.Text;
+        }
 
-            int count = 0;
-            for (int i= 0; i < 100; i++) 
-            {
-                int currentCount = driver.FindElements(By.CssSelector("div.product-container")).Count;
-                if (currentCount!=count)
-                {
-                    count = currentCount;
-                }
-                else
-                {
-                    break;
-                }
-            }
-            var actualElementCount = count.ToString();//tostring - zrzucenie lcizby do stringa
+        public string CountItemsOnPage()
+        {
+            var webElements = driver.FindElements(ItemCounter);
+            return webElements.Count.ToString();
+           // var actualElementCount = webElements.Count.ToString();//tostring - zrzucenie lcizby do stringa
+
+            //int count = 0;
+            //for (int i= 0; i < 100; i++) 
+            //{
+            //    int currentCount = driver.FindElements(By.CssSelector("div.product-container")).Count;
+            //    if (currentCount!=count)
+            //    {
+            //        count = currentCount;
+            //    }
+            //    else
+            //    {
+            //        break;
+            //    }
+            //}
+            //var actualElementCount = count.ToString();//tostring - zrzucenie lcizby do stringa
         }
 
     }

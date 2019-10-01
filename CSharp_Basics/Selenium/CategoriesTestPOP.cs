@@ -24,7 +24,9 @@ namespace Selenium
         public void DressTest1()
             
         {
-           
+            sut.CountItemsOnPage();
+            var errorMessage = sut.actualElementCount();
+            StringAssert.Contains(actualElementCount, text);
         }
 
         [Test]
