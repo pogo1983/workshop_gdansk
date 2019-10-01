@@ -26,7 +26,7 @@ namespace Selenium
         {
          
         }
-
+        //Przerobic test na jeden z z roznymi linkami w naglowku [TestCase]]
         [Test]
         public void ShirtTest2()
 
@@ -37,6 +37,7 @@ namespace Selenium
             string textWitCountedItems = sut.GetDispNumberOfProducts();
             string countOfItems = sut.CountItemsOnPage();
             StringAssert.Contains(countOfItems, textWitCountedItems);
+            Assert.AreEqual(1,countOfItems);
         }
 
         [Test]

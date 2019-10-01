@@ -18,7 +18,7 @@ namespace Selenium.Pages
         public CategoryPage(IWebDriver driver)//konstruktor do tworzenia obiektu strony
         {
             this.driver = driver;
-            waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 15));
+            waitDriver = new WebDriverWait(driver, new System.TimeSpan(0, 0, 25));
         }
 
         public void GoToPage()
