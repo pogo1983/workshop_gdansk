@@ -36,7 +36,7 @@ namespace Selenium
             categoryHeader.Click();
             string textWitCountedItems = sut.GetDispNumberOfProducts();
             string countOfItems = sut.CountItemsOnPage();
-            StringAssert.Contains(textWitCountedItems,countOfItems);
+            StringAssert.Contains(countOfItems, textWitCountedItems);
         }
 
         [Test]
