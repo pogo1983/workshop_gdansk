@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Selenium.Pages;
 using System;
 using System.Threading;
 
@@ -9,12 +10,12 @@ namespace Selenium
     [TestFixture]
     public class CategoriesTestPOP:TestBase
     {
-        CategoriesTestPOP sut;
+        CategoryPage sut;
 
         [SetUp]
         public void CategoriesSetup()
         {
-            sut = new CategoriesTestPOP(driver);
+            sut = new CategoryPage(driver);
             //driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
             sut.GoToPage();
         }
